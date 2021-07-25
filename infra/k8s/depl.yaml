@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: didixbox-achievements
+  namespace: discord
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: didixbox-achievements
+  template:
+    metadata:
+      labels:
+        app: didixbox-achievements
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: didixbox-achievements
+        image: pawndev/didixbox-achievements
+        stdin: true
+        tty: true
+        env:
+          - name: DISCORD_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: discord
+                key: discord-bot-token

@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "didixbox-achievements"
+version = "0.1.0"
+description = ""
+authors = ["pawndev <coquelet.c@gmail.com>"]
+maintainers = ["pawndev <coquelet.c@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/pawndev/didixbox-achievements"
+repository = "https://github.com/pawndev/didixbox-achievements"
+keywords = [
+    "Discord",
+    "XBOX achivements"
+]
+
+[tool.poetry.scripts]
+bot = "didixbox_achievements:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+"discord.py" = "^1.7.3"
+requests = "^2.26.0"
+aiohttp = "^3.7.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
